@@ -1,20 +1,6 @@
 #get random module 
 import random           
 
-
-
-   
-
-
-
-
-
-
-
-
-
-
-
 #import all words and separate them into easy, normal and hard lists
 def import_words(filename, easy, normal, hard):
     #open file
@@ -29,10 +15,6 @@ def import_words(filename, easy, normal, hard):
         if (word !='' and len(word) >= 8):
             hard.append(word.casefold())
         
-
-
-
-
 #get level from user
 def choose_level():
     level = input("Choose a level of difficulty, 1 for easy, 2 for normal, 3 for hard")
@@ -63,7 +45,7 @@ def guess_word(mystery_word):
         choice_letter = input("Pick one letter from the English alphabet: ").lower()
         while choice_letter.isalpha() != True or len(choice_letter) != 1:
             choice_letter = input("Please enter one valid letter from the English alphabet: ").lower()
-            while choice_letter in previous_guesses:
+        while choice_letter in previous_guesses:
                 choice_letter = input("You've already guessed that one, please choose another letter: ").lower()
         #replace underscore with letters found in guess_word
         previous_guesses.append(choice_letter)
@@ -81,12 +63,6 @@ def guess_word(mystery_word):
     if tries == 0:
         print("Sorry, you didn't guess the mystery word: " + str(word)) 
         
-
-
-    
-
-
-
 
 #start game
 def play_game(easy, normal, hard):
